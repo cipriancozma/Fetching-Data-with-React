@@ -5,11 +5,15 @@ const fetcher = (...args) => {
 }
 
 function Swr() {
-    const { data } = useSWR("https://dog.ceo/api/breeds/image/random", fetcher)
+    const { data, error } = useSWR("https://dog.ceo/api/breeds/image/random", fetcher, { suspense: true });
+
+    if(error) {
+        return <h1>There was an error...</h1>
+    }
 
     return (
         <div>
-            <img width={500} src={data?.message} alt={"dogs"} />
+            <img width={500} src={data.message} alt={"dogs"} />
         </div>
     )
 }

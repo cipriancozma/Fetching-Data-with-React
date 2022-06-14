@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import './App.css';
 // import Axios from './components/Axios';
 import Swr from './components/Swr';
@@ -8,7 +9,9 @@ function App() {
     <div className="App">
       {/* <Fetch /> */}
       {/* <Axios /> */}
-      <Swr />
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <Swr />
+      </Suspense>
     </div>
   );
 }
