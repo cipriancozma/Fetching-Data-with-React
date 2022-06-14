@@ -1,10 +1,14 @@
 import './App.css';
-import Fetch from './components/Fetch';
+// import Axios from './components/Axios';
+import Swr from './components/Swr';
+// import Fetch from './components/Fetch';
 
 function App() {
   return (
     <div className="App">
-      <Fetch />
+      {/* <Fetch /> */}
+      {/* <Axios /> */}
+      <Swr />
     </div>
   );
 }
