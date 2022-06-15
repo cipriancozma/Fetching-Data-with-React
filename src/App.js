@@ -1,7 +1,8 @@
-import { Suspense } from 'react';
+// import { Suspense } from 'react';
 import './App.css';
+import ReactQuery from './components/ReactQuery';
 // import Axios from './components/Axios';
-import Swr from './components/Swr';
+// import Swr from './components/Swr';
 // import Fetch from './components/Fetch';
 
 function App() {
@@ -9,9 +10,10 @@ function App() {
     <div className="App">
       {/* <Fetch /> */}
       {/* <Axios /> */}
-      <Suspense fallback={<h1>Loading...</h1>}>
+      {/* <Suspense fallback={<h1>Loading...</h1>}>
         <Swr />
-      </Suspense>
+      </Suspense> */}
+      <ReactQuery />
     </div>
   );
 }
