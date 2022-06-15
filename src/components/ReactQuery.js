@@ -1,15 +1,25 @@
-import React from "react";
+import React, { Suspense } from "react";
+import { QueryClientProvider, QueryClient } from "react-query";
 import Dog1 from "../helper-components/Dog1";
 import Dog2 from "../helper-components/Dog2";
 
-function ReactQuery() {    
+function ReactQuery() {
+  const client = new QueryClient({
+    defaultOptions: {
+      queries: {
+        suspense: true,
+      },
+    },
+  });
 
-    return (
-        <div>
-            <Dog1 />
-            <Dog2 />
-        </div>
-    )
+  return (
+    <QueryClientProvider client={client}>
+      <Suspense fallback={<h2>Loading...</h2>}>
+        <Dog1 />
+        <Dog2 />
+      </Suspense>
+    </QueryClientProvider>
+  );
 }
 
 export default ReactQuery;
